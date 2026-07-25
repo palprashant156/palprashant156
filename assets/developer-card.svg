@@ -37,7 +37,7 @@
   <g class="card" transform="translate(10, 10)">
     <rect width="780" height="220" rx="16" fill="url(#card-bg)" stroke="url(#neon-line)" stroke-width="1.5"/>
 
-    <!-- Avatar Placeholder Graphic -->
+    <!-- Avatar Vector Graphic -->
     <g transform="translate(35, 35)">
       <circle cx="75" cy="75" r="60" fill="#21262d" stroke="#00f2fe" stroke-width="2" filter="url(#avatar-glow)"/>
       <!-- User / Dev Avatar Graphic -->
