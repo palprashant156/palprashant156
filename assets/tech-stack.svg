@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="100%" height="100%">
+  <defs>
+    <radialGradient id="core-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#7f00ff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes orbit-1 {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes orbit-2 {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
+    @keyframes pulse-core {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.15); opacity: 1; }
+    }
+    @keyframes counter-rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(-360deg); }
+    }
+
+    .orbit-ring-1 { animation: orbit-1 16s linear infinite; transform-origin: 400px 160px; }
+    .orbit-ring-2 { animation: orbit-2 22s linear infinite; transform-origin: 400px 160px; }
+    .core { animation: pulse-core 4s ease-in-out infinite; transform-origin: 400px 160px; }
+    .counter { animation: counter-rotate 16s linear infinite; transform-origin: center; }
+  </style>
+
+  <!-- Dark Background Shell -->
+  <rect width="800" height="320" rx="16" fill="#090a0f" stroke="#1f242d" stroke-width="1.5"/>
+
+  <!-- Orbit Track Circles -->
+  <circle cx="400" cy="160" r="85" fill="none" stroke="rgba(0, 242, 254, 0.15)" stroke-width="1.5" stroke-dasharray="6,6"/>
+  <circle cx="400" cy="160" r="135" fill="none" stroke="rgba(127, 0, 255, 0.15)" stroke-width="1.5" stroke-dasharray="8,8"/>
+
+  <!-- Core Glowing Center (Tech Hub) -->
+  <circle cx="400" cy="160" r="45" fill="url(#core-glow)" class="core" filter="url(#glow)"/>
+  <circle cx="400" cy="160" r="28" fill="#161b22" stroke="#00f2fe" stroke-width="2"/>
+  <text x="400" y="165" fill="#00f2fe" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="900" text-anchor="middle">CORE</text>
+
+  <!-- Orbit Ring 1 (Inner Ring - 3 Icons) -->
+  <g class="orbit-ring-1">
+    <!-- Icon 1: React (At top: 400, 75) -->
+    <g transform="translate(400, 75)">
+      <circle cx="0" cy="0" r="22" fill="#161b22" stroke="#61dafb" stroke-width="2" filter="url(#glow)"/>
+      <text x="0" y="5" fill="#61dafb" font-family="sans-serif" font-size="12" font-weight="700" text-anchor="middle">⚛ React</text>
+    </g>
+
+    <!-- Icon 2: NestJS (At bottom-right: 473, 202) -->
+    <g transform="translate(473, 202)">
+      <circle cx="0" cy="0" r="22" fill="#161b22" stroke="#ea2845" stroke-width="2" filter="url(#glow)"/>
+      <text x="0" y="5" fill="#ea2845" font-family="sans-serif" font-size="11" font-weight="700" text-anchor="middle">⚡ NestJS</text>
+    </g>
+
+    <!-- Icon 3: TypeScript (At bottom-left: 327, 202) -->
+    <g transform="translate(327, 202)">
+      <circle cx="0" cy="0" r="22" fill="#161b22" stroke="#3178c6" stroke-width="2" filter="url(#glow)"/>
+      <text x="0" y="5" fill="#3178c6" font-family="sans-serif" font-size="12" font-weight="700" text-anchor="middle">TS</text>
+    </g>
+  </g>
+
+  <!-- Orbit Ring 2 (Outer Ring - 4 Icons) -->
+  <g class="orbit-ring-2">
+    <!-- Outer Icon 1: Docker (265, 160) -->
+    <g transform="translate(265, 160)">
+      <circle cx="0" cy="0" r="24" fill="#161b22" stroke="#2496ed" stroke-width="2" filter="url(#glow)"/>
+      <text x="0" y="5" fill="#2496ed" font-family="sans-serif" font-size="11" font-weight="700" text-anchor="middle">🐳 Docker</text>
+    </g>
+
+    <!-- Outer Icon 2: AWS (535, 160) -->
+    <g transform="translate(535, 160)">
+      <circle cx="0" cy="0" r="24" fill="#161b22" stroke="#ff9900" stroke-width="2" filter="url(#glow)"/>
+      <text x="0" y="5" fill="#ff9900" font-family="sans-serif" font-size="11" font-weight="700" text-anchor="middle">☁ AWS</text>
+    </g>
+
+    <!-- Outer Icon 3: Next.js (400, 25) -->
+    <g transform="translate(400, 25)">
+      <circle cx="0" cy="0" r="24" fill="#161b22" stroke="#ffffff" stroke-width="2" filter="url(#glow)"/>
+      <text x="0" y="5" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="700" text-anchor="middle">Next.js</text>
+    </g>
+
+    <!-- Outer Icon 4: Postgres (400, 295) -->
+    <g transform="translate(400, 295)">
+      <circle cx="0" cy="0" r="24" fill="#161b22" stroke="#336791" stroke-width="2" filter="url(#glow)"/>
+      <text x="0" y="5" fill="#336791" font-family="sans-serif" font-size="11" font-weight="700" text-anchor="middle">🐘 PG</text>
+    </g>
+  </g>
+</svg>

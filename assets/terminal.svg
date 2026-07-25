@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="term-header" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#21262d"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    @keyframes type-line-1 {
+      0% { width: 0; }
+      20%, 100% { width: 100%; }
+    }
+    @keyframes type-line-2 {
+      0%, 25% { width: 0; }
+      45%, 100% { width: 100%; }
+    }
+    @keyframes type-line-3 {
+      0%, 50% { width: 0; }
+      70%, 100% { width: 100%; }
+    }
+    @keyframes type-line-4 {
+      0%, 75% { width: 0; }
+      95%, 100% { width: 100%; }
+    }
+
+    .cursor { animation: blink 0.8s infinite; fill: #00f2fe; }
+
+    .line-1 { overflow: hidden; white-space: nowrap; animation: type-line-1 10s steps(30, end) infinite; }
+    .line-2 { overflow: hidden; white-space: nowrap; animation: type-line-2 10s steps(30, end) infinite; }
+    .line-3 { overflow: hidden; white-space: nowrap; animation: type-line-3 10s steps(30, end) infinite; }
+    .line-4 { overflow: hidden; white-space: nowrap; animation: type-line-4 10s steps(30, end) infinite; }
+  </style>
+
+  <!-- Terminal Window Shell -->
+  <rect width="800" height="320" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+
+  <!-- Window Header -->
+  <path d="M0,12 A12,12 0 0,1 12,0 L788,0 A12,12 0 0,1 800,12 L800,40 L0,40 Z" fill="url(#term-header)"/>
+  <circle cx="25" cy="20" r="6" fill="#ff5f56"/>
+  <circle cx="45" cy="20" r="6" fill="#ffbd2e"/>
+  <circle cx="65" cy="20" r="6" fill="#27c93f"/>
+  <text x="400" y="25" fill="#8b949e" font-family="'Fira Code', 'Courier New', monospace" font-size="13" text-anchor="middle">visitor@palprashant:~ (zsh)</text>
+
+  <!-- Terminal Output Lines -->
+  <g font-family="'Fira Code', 'Courier New', monospace" font-size="14" transform="translate(30, 75)">
+
+    <!-- Line 1: whoami -->
+    <g transform="translate(0, 0)">
+      <text fill="#27c93f" font-weight="700">visitor@github:~$</text>
+      <text x="170" fill="#f0f6fc">whoami</text>
+    </g>
+    <g transform="translate(0, 25)">
+      <text fill="#58a6ff">&gt; Prashant Pal — Full Stack &amp; Systems Architect</text>
+    </g>
+
+    <!-- Line 2: skills -->
+    <g transform="translate(0, 65)">
+      <text fill="#27c93f" font-weight="700">visitor@github:~$</text>
+      <text x="170" fill="#f0f6fc">skills --category=core</text>
+    </g>
+    <g transform="translate(0, 90)">
+      <text fill="#a855f7">[TypeScript, NestJS, Next.js, PostgreSQL, Docker, AWS, GraphQL]</text>
+    </g>
+
+    <!-- Line 3: current project -->
+    <g transform="translate(0, 130)">
+      <text fill="#27c93f" font-weight="700">visitor@github:~$</text>
+      <text x="170" fill="#f0f6fc">building --status</text>
+    </g>
+    <g transform="translate(0, 155)">
+      <text fill="#ff007f">🚀 High-Performance Microservices &amp; System Design Simulator</text>
+    </g>
+
+    <!-- Line 4: Prompt with Blinking Cursor -->
+    <g transform="translate(0, 195)">
+      <text fill="#27c93f" font-weight="700">visitor@github:~$</text>
+      <text x="170" fill="#00f2fe">echo "Let's build something epic!"</text>
+      <rect x="475" y="-12" width="10" height="18" class="cursor"/>
+    </g>
+  </g>
+</svg>

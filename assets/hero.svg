@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090a0f"/>
+      <stop offset="50%" stop-color="#121526"/>
+      <stop offset="100%" stop-color="#050608"/>
+    </linearGradient>
+
+    <!-- Aurora Glow Gradient -->
+    <linearGradient id="aurora" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.3">
+        <animate attributeName="stop-color" values="#00f2fe;#4facfe;#7f00ff;#00f2fe" dur="10s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#7f00ff" stop-opacity="0.3">
+        <animate attributeName="stop-color" values="#7f00ff;#ff007f;#00f2fe;#7f00ff" dur="10s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#ff007f" stop-opacity="0.3">
+        <animate attributeName="stop-color" values="#ff007f;#00f2fe;#4facfe;#ff007f" dur="10s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Text Glow Filter -->
+    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur1"/>
+      <feGaussianBlur stdDeviation="15" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes pulse-border {
+      0%, 100% { stroke: #00f2fe; }
+      33% { stroke: #7f00ff; }
+      66% { stroke: #ff007f; }
+    }
+    @keyframes shooting-star {
+      0% { transform: translateX(0) translateY(0); opacity: 1; }
+      100% { transform: translateX(-400px) translateY(300px); opacity: 0; }
+    }
+
+    .star { animation: twinkle 3s infinite ease-in-out; transform-origin: center; }
+    .star-1 { animation-delay: 0s; }
+    .star-2 { animation-delay: 0.7s; }
+    .star-3 { animation-delay: 1.4s; }
+    .star-4 { animation-delay: 2.1s; }
+
+    .floating-container { animation: float 6s ease-in-out infinite; }
+    .border-pulse { animation: pulse-border 8s linear infinite; }
+
+    .shooter {
+      animation: shooting-star 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      animation-delay: 2s;
+    }
+  </style>
+
+  <!-- Base Canvas -->
+  <rect width="1000" height="360" rx="16" fill="url(#bg-grad)"/>
+
+  <!-- Aurora Mesh Ribbon -->
+  <path d="M-100,180 Q250,50 500,180 T1100,180 L1100,360 L-100,360 Z" fill="url(#aurora)"/>
+
+  <!-- Starfield -->
+  <g fill="#ffffff">
+    <circle cx="80" cy="60" r="1.5" class="star star-1"/>
+    <circle cx="150" cy="120" r="1" class="star star-2"/>
+    <circle cx="220" cy="40" r="2" class="star star-3"/>
+    <circle cx="310" cy="90" r="1.2" class="star star-4"/>
+    <circle cx="450" cy="50" r="1.8" class="star star-1"/>
+    <circle cx="580" cy="110" r="1" class="star star-3"/>
+    <circle cx="690" cy="70" r="2.5" class="star star-2"/>
+    <circle cx="780" cy="140" r="1.2" class="star star-4"/>
+    <circle cx="890" cy="45" r="1.5" class="star star-1"/>
+    <circle cx="940" cy="100" r="2" class="star star-3"/>
+    <circle cx="120" cy="280" r="1" class="star star-2"/>
+    <circle cx="840" cy="290" r="1.5" class="star star-4"/>
+  </g>
+
+  <!-- Shooting Star -->
+  <g class="shooter" transform="translate(900, 20)">
+    <line x1="0" y1="0" x2="60" y2="-45" stroke="url(#aurora)" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="2" fill="#ffffff" filter="url(#neon-glow)"/>
+  </g>
+
+  <!-- Animated Main Card Content -->
+  <g class="floating-container">
+    <!-- Outer Glow Border Frame -->
+    <rect x="50" y="40" width="900" height="280" rx="14" fill="none" stroke="#00f2fe" stroke-width="2" class="border-pulse" opacity="0.6"/>
+
+    <!-- Top Decorative Header Bar -->
+    <path d="M50,75 L950,75" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <circle cx="80" cy="58" r="5" fill="#ff5f56"/>
+    <circle cx="98" cy="58" r="5" fill="#ffbd2e"/>
+    <circle cx="116" cy="58" r="5" fill="#27c93f"/>
+    <text x="500" y="62" fill="#8b949e" font-family="'Segoe UI', Roboto, Ubuntu, sans-serif" font-size="12" font-weight="600" text-anchor="middle" letter-spacing="2">SYSTEM_OVERRIDE // PORTFOLIO_V3.0</text>
+
+    <!-- Central Glowing Branding -->
+    <text x="500" y="170" fill="#00f2fe" font-family="'Segoe UI', Roboto, sans-serif" font-size="50" font-weight="900" text-anchor="middle" letter-spacing="6" filter="url(#neon-glow)">
+      ⚡ PRASHANT PAL ⚡
+    </text>
+
+    <!-- Subtitle: FULL STACK ENGINEER -->
+    <text x="500" y="225" fill="#ffffff" font-family="'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="700" text-anchor="middle" letter-spacing="8" opacity="0.9">
+      FULL STACK &amp; SYSTEMS ENGINEER
+    </text>
+
+    <!-- Tech Badges Line -->
+    <g transform="translate(500, 260)">
+      <rect x="-190" y="0" width="100" height="26" rx="13" fill="rgba(0, 242, 254, 0.1)" stroke="#00f2fe" stroke-width="1"/>
+      <text x="-140" y="17" fill="#00f2fe" font-family="sans-serif" font-size="11" font-weight="600" text-anchor="middle">TYPESCRIPT</text>
+
+      <rect x="-70" y="0" width="90" height="26" rx="13" fill="rgba(127, 0, 255, 0.15)" stroke="#7f00ff" stroke-width="1"/>
+      <text x="-25" y="17" fill="#a855f7" font-family="sans-serif" font-size="11" font-weight="600" text-anchor="middle">NESTJS</text>
+
+      <rect x="35" y="0" width="85" height="26" rx="13" fill="rgba(255, 0, 127, 0.15)" stroke="#ff007f" stroke-width="1"/>
+      <text x="77" y="17" fill="#ff007f" font-family="sans-serif" font-size="11" font-weight="600" text-anchor="middle">NEXT.JS</text>
+
+      <rect x="130" y="0" width="80" height="26" rx="13" fill="rgba(39, 201, 63, 0.15)" stroke="#27c93f" stroke-width="1"/>
+      <text x="170" y="17" fill="#27c93f" font-family="sans-serif" font-size="11" font-weight="600" text-anchor="middle">DOCKER</text>
+    </g>
+  </g>
+</svg>
