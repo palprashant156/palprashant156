@@ -186,16 +186,12 @@ AWS          ███████████░░░░░░░░░ 65%
 
 <div align="center">
 
-  <img src="https://github-readme-stats.vercel.app/api?username=palprashant156&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&icon_color=00f2fe&title_color=00f2fe&text_color=c9d1d9" height="185"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=palprashant156&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=7f00ff&text_color=c9d1d9" height="185"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=palprashant156&show_icons=true&theme=tokyonight&border_radius=10" height="185"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=palprashant156&layout=compact&theme=tokyonight&border_radius=10" height="185"/>
 
   <br/><br/>
 
-  <img src="https://streak-stats.demolab.com?user=palprashant156&theme=tokyonight&hide_border=true&background=0d1117&ring=00f2fe&fire=ff007f" width="98%"/>
-
-  <br/><br/>
-
-  <img src="https://github-profile-trophy.vercel.app/?username=palprashant156&theme=algolia&no-frame=true&margin-w=15&margin-h=15&column=4"/>
+  <img src="https://streak-stats.demolab.com?user=palprashant156&theme=tokyonight&border_radius=10" width="98%"/>
 
 </div>
 
